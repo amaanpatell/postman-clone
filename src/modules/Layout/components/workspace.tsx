@@ -19,8 +19,10 @@ const WorkSpace = () => {
   return (
     <>
       <Hint label="Change Workspace ">
-        <Select>
-        </Select>
+        <Button className="border border-indigo-400 bg-indigo-400/10 hover:bg-indigo-400/20 text-indigo-400 hover:text-indigo-300">
+          <User className="size-4 text-indigo-400" />
+          <span className="text-sm text-indigo-400 font-semibold">Personal Workspace</span>
+        </Button> 
       </Hint>
     </>
   );
