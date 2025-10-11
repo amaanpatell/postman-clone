@@ -3,13 +3,14 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "sonner";
-// import { QueryProvider } from "@/components/query-provider";
+import { QueryProvider } from "@/components/query-provider";
 // import { HotkeysProviders } from "@/components/hot-key-provider";
 
+
 const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-});
+  subsets:["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700" , "800", "900"],
+})
 
 export const metadata: Metadata = {
   title: "PostBoy",
@@ -23,15 +24,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${poppins.className} antialiased`}>
-        {/* <QueryProvider> */}
-        <ThemeProvider attribute={"class"} defaultTheme="system" enableSystem>
-          {/* <HotkeysProviders> */}
-          <Toaster />
-          {children}
-          {/* </HotkeysProviders> */}
-        </ThemeProvider>
-        {/* </QueryProvider> */}
+      <body
+        className={`${poppins.className} antialiased`}
+      >
+        <QueryProvider>
+          <ThemeProvider attribute={"class"} defaultTheme="system" enableSystem>
+            {/* <HotkeysProviders> */}
+              <Toaster />
+              {children}
+            {/* </HotkeysProviders> */}
+
+          </ThemeProvider>
+        </QueryProvider>
+
       </body>
     </html>
   );
