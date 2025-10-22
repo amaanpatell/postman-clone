@@ -34,9 +34,9 @@ export const initializeWorkspace = async () => {
           },
         },
       },
-      include:{
-        members:true
-      }
+      include: {
+        members: true,
+      },
     });
 
     return {
@@ -51,7 +51,6 @@ export const initializeWorkspace = async () => {
     };
   }
 };
-
 
 export async function getWorkspaces() {
   const user = await currentUser();
@@ -90,7 +89,6 @@ export async function createWorkspace(name: string) {
   return workspace;
 }
 
-
 export const getWorkspaceById = async (id: string) => {
   const workspace = await db.workspace.findUnique({
     where: { id },
@@ -100,4 +98,3 @@ export const getWorkspaceById = async (id: string) => {
   });
   return workspace;
 };
-

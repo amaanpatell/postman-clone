@@ -1,18 +1,17 @@
 "use client";
 
 import Modal from "@/components/ui/modal";
+import { useCreateCollection } from "@/modules/collections/hooks/collection";
 
 import React, { useState } from "react";
 import { toast } from "sonner";
-import { useCreateCollection } from "../hooks/collection";
-
 
 const CreateCollection = ({
-    workspaceId,
+  workspaceId,
   isModalOpen,
   setIsModalOpen,
 }: {
-    workspaceId: string;
+  workspaceId: string;
   isModalOpen: boolean;
   setIsModalOpen: (open: boolean) => void;
 }) => {
@@ -22,7 +21,7 @@ const CreateCollection = ({
   const handleSubmit = async () => {
     if (!name.trim()) return;
     try {
-      await mutateAsync(name); 
+      await mutateAsync(name);
       toast.success("Collection created successfully");
       setName("");
       setIsModalOpen(false);

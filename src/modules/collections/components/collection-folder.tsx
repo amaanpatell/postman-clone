@@ -23,9 +23,9 @@ import {
 import EditCollectionModal from "./edit-collection";
 import DeleteCollectionModal from "./delete-collection";
 import AddRequestCollectionModal from "./add-request-modal";
-// import { useGetAllRequestFromCollection } from "@/modules/request/hooks/request";
-// import { REST_METHOD } from "@prisma/client";
-// import { useRequestPlaygroundStore } from "@/modules/request/store/useRequestStore";
+import { useGetAllRequestFromCollection } from "@/modules/request/hooks/request";
+import { REST_METHOD } from "@prisma/client";
+import { useRequestPlaygroundStore } from "@/modules/request/store/useRequestStore";
 
 interface Props {
   collection: {
@@ -179,7 +179,9 @@ const CollectionFolder = ({ collection }: Props) => {
                         {/* @ts-ignore */}
                         <span
                           className={`text-xs font-bold px-2 py-1 rounded ${
-                            requestColorMap[request.method as keyof typeof requestColorMap] ?? ''
+                            requestColorMap[
+                              request.method as keyof typeof requestColorMap
+                            ] ?? ""
                           } bg-zinc-800`}
                         >
                           {request.method}

@@ -1,7 +1,7 @@
 "use client";
 
 import Modal from "@/components/ui/modal";
-import { useDeleteCollection } from "../hooks/collections";
+import { useDeleteCollection } from "../hooks/collection";
 import React from "react";
 import { toast } from "sonner";
 
